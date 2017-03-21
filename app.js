@@ -21,7 +21,6 @@ render(app, {root: path.join(__dirname, 'view'),layout: "layout/default",viewExt
 //-----------serve---------------------
 app.use(serve(path.join(__dirname, 'public')));
 
-
-
-
-app.listen(3000);
+let port = 3000;
+app.listen(port);
+console.log("listen 127.0.0.1:"+port);

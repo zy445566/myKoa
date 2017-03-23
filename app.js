@@ -6,7 +6,12 @@ const compose = require('koa-compose');
 const routerList = require('./router');
 const render = require('koa-ejs');
 const serve = require('koa-static');
+// const cors = require('kcors');
+
 const app = new Koa();
+
+//-----------CORS koa---------------
+// app.use(cors());
 
 //-----------cache 403---------------
 app.use(conditional());

@@ -7,6 +7,7 @@ myKoa
 #use
 ```sh
 >cd myKoa
+>npm install
 >node app
 listen 127.0.0.1:3000
 ```

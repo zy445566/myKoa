@@ -6,6 +6,7 @@ myKoa
 
 #use
 ```sh
+>git clone https://github.com/zy445566/myKoa.git
 >cd myKoa
 >npm install
 >node app

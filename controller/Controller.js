@@ -1,8 +1,17 @@
+const AbstractFactory = require('../AbstractFactory');
 class Controller
 {
-	constructor(server)
+	constructor()
 	{
-		this.server = server;
+
+	}
+
+	static getServer(serverName)
+	{
+		/*
+		*@var ../server/ServerFactory
+		*/
+		return AbstractFactory.getFactory('server').getServer(serverName);
 	}
 }
 module.exports = Controller;

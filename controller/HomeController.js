@@ -1,10 +1,9 @@
 const Controller = require('./Controller');
-
 class HomeController extends Controller
 {
 	constructor()
 	{
-		super(null);
+		super();
 	}
 
 	async index(ctx)

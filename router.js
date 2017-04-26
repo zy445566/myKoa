@@ -1,15 +1,16 @@
 const joiRouter = require('koa-joi-router');
-var HomeController = new (require('./controller/HomeController'))();
-var UserController = new (require('./controller/UserController'))();
-//-------------HomeController--------------
+const AbstractFactory = require('./AbstractFactory');
+var homeController = AbstractFactory.getFactory('controller').getController('home');
+var userController = AbstractFactory.getFactory('controller').getController('user');
+//-------------homeController--------------
 const home = joiRouter();
-home.get('/', HomeController.index);
+home.get('/', homeController.index);
 
 
-//--------------UserController---------------
+//--------------userController---------------
 const user = joiRouter();
-user.get('/user', UserController.index);
-user.get('/user/get-user', UserController.getUser);
+user.get('/user', userController.index);
+user.get('/user/get-user', userController.getUser);
 
 
 

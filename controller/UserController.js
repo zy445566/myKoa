@@ -1,12 +1,10 @@
 const Controller = require('./Controller');
 const UserServer = require('../server/UserServer');
-var userController = null;
 class UserController extends Controller
 {
 	constructor()
 	{
-		super(new UserServer());
-		userController = this;
+		super();
 	}
 
 	async index(ctx)
@@ -16,7 +14,7 @@ class UserController extends Controller
 
 	async getUser(ctx)
 	{
-		let userRes = userController.server.getAccount();
+		let userRes = UserController.getServer('user').getAccount();
 		ctx.body = JSON.stringify(userRes);
 	}
 }

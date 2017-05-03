@@ -1,5 +1,4 @@
 const Controller = require('./Controller');
-const UserServer = require('../server/UserServer');
 class UserController extends Controller
 {
 	constructor()

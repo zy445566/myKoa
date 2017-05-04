@@ -7,11 +7,11 @@ const ServerClasses={
 const ServerInstances={};
 class ServerFactory
 {
-    getServer(serverName)
+    getServer(serverName,param=[])
     {
         if (!ServerInstances.hasOwnProperty(serverName))
         {
-            ServerInstances[serverName] = new ServerClasses[serverName]();
+            ServerInstances[serverName] = new ServerClasses[serverName](...param);
         }
         return ServerInstances[serverName];
     }

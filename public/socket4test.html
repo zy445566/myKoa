@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="/socket.io.min.js"></script>
+    </head>
+    <body>
+        <script>
+        var socket = io('http://127.0.0.1:3000');
+        socket.on('connect', function(){
+            console.log(socket.id);
+            socket.emit('sendmsg',{msg:'sendmsg'});
+            socket.on('recmsg',function (data){
+                console.log(data);
+            });
+            
+        });
+        
+        socket.on('disconnect', function(){
+            console.log(333);
+        });
+        </script>
+    </body>
+</html>

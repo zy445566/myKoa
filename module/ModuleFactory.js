@@ -8,12 +8,12 @@ const ModuleClasses={
 const ModuleInstances = {};
 class ModuleFactory
 {
-    getModule(ModuleType,ModuleName)
+    getModule(ModuleType,ModuleName,param=[])
     {
         let mapKey = ModuleType+"/"+ModuleName;
         if (!ModuleInstances.hasOwnProperty(mapKey))
         {
-            ModuleInstances[mapKey] = new ModuleClasses[mapKey]();
+            ModuleInstances[mapKey] = new ModuleClasses[mapKey](...param);
         }
         return ModuleInstances[mapKey];
     }

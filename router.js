@@ -1,7 +1,7 @@
 const joiRouter = require('koa-joi-router');
 const AbstractFactory = require('./AbstractFactory');
-var homeController = AbstractFactory.getFactory('controller').getController('home');
-var userController = AbstractFactory.getFactory('controller').getController('user');
+const homeController = AbstractFactory.getFactory('controller').getController('home');
+const userController = AbstractFactory.getFactory('controller').getController('user');
 //-------------homeController--------------
 const home = joiRouter();
 home.get('/', homeController.index);

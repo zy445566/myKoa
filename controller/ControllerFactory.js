@@ -3,16 +3,17 @@
 */
 const ControllerClasses={
     home:require("./HomeController"),
-    user:require("./UserController")
+    user:require("./UserController"),
+    chat:require("./chatController")
 };
 const ControllerInstances={};
 class ControllerFactory
 {
-    getController(controllerName)
+    getController(controllerName,param=[])
     {
         if (!ControllerInstances.hasOwnProperty(controllerName))
         {
-            ControllerInstances[controllerName] = new ControllerClasses[controllerName]();
+            ControllerInstances[controllerName] = new ControllerClasses[controllerName](...param);
         }
         return ControllerInstances[controllerName];
     }

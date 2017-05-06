@@ -4,7 +4,7 @@
 const ControllerClasses={
     home:require("./HomeController"),
     user:require("./UserController"),
-    chat:require("./chatController")
+    chat:require("./ChatController")
 };
 const ControllerInstances={};
 class ControllerFactory

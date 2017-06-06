@@ -25,7 +25,6 @@ class AbstractFactory
                     break;
                 default:
                     throw new Error("not find "+factoryName+" Factory");
-                    break;
             }
         }
         return FactoryInstances[factoryName];

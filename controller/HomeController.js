@@ -1,15 +1,17 @@
-const Controller = require('./Controller');
+const Controller = require("./Controller");
 class HomeController extends Controller
 {
-	constructor()
-	{
-		super();
-	}
+    constructor()
+    {
+        super();
+    }
 
-	async index(ctx)
-	{
-		await ctx.render('home/index');
-	}
+    index()
+    {
+        return async(ctx)=>{
+            await ctx.render("home/index");
+        };
+    }
 }
 
 module.exports = HomeController;

@@ -1,16 +1,16 @@
-const Controller = require('./Controller');
+const Controller = require("./Controller");
 class ChatController extends Controller
 {
-	constructor()
-	{
-		super();
-	}
+    constructor()
+    {
+        super();
+    }
 
-	async sendmsg(socket,data)
-	{
+    async sendmsg(socket,data)
+    {
         console.log(data);
-		socket.emit('recmsg',{msg:'recmsg'});
-	}
+        socket.emit("recmsg",{msg:"recmsg"});
+    }
 }
 
 module.exports = ChatController;

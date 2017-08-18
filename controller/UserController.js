@@ -1,21 +1,25 @@
-const Controller = require('./Controller');
+const Controller = require("./Controller");
 class UserController extends Controller
 {
-	constructor()
-	{
-		super();
-	}
+    constructor()
+    {
+        super();
+    }
 
-	async index(ctx)
-	{
-		await ctx.render('user/index');
-	}
+    index()
+    {
+        return async(ctx)=>{
+            await ctx.render("user/index");
+        };
+    }
 
-	async getUser(ctx)
-	{
-		let userRes = UserController.getServer('user').getAccount();
-		ctx.body = JSON.stringify(userRes);
-	}
+    getUser()
+    {
+        return async(ctx)=>{
+            let userRes = this.getServer("user").getAccount();
+            ctx.body = JSON.stringify(userRes);
+        };
+    }
 }
 
 module.exports = UserController;

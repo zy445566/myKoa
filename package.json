@@ -9,5 +9,17 @@
     "koa-joi-router": "^5.0.0",
     "koa-static": "^3.0.0",
     "socket.io": "^1.7.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.4.1"
+  },
+  "main": "app.js",
+  "scripts": {
+    "eslint:init": "./node_modules/.bin/eslint --init",
+    "eslint:file": "./node_modules/.bin/eslint app.js router.js",
+    "eslint:dir": "./node_modules/.bin/eslint ./common ./controller ./module ./server",
+    "eslint:fix": "./node_modules/.bin/eslint --fix ./common ./controller ./module ./server  app.js router.js",
+    "dev:app": "npm run eslint:file && npm run eslint:dir && node app"
   }
 }
